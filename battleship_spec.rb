@@ -36,17 +36,18 @@ class BattleshipTest < MiniTest::Test
 
   def test_player_can_take_guess
     emily = Player.new "Emily"
-    guess = emily.take_guess "A1"
-    assert_equal guess, [1,1]
-    guess_two = emily.take_guess "D6"
-    assert_equal guess_two, [4,6]
+    alex =Player.new "Alex"
+    guess = emily.take_guess "A1", alex
+    assert_equal guess, :m
+    guess_two = emily.take_guess "D6", alex
+    assert_equal guess_two, :m
   end
 
   def test_position_gets_marked_on_board
     alex = Player.new "Alex"
     emily = Player.new "Emily"
-    position = emily.take_guess "A1"
-    alex.mark_board position 
+    emily.take_guess "A1", alex
+    alex.mark_board [1,1], :m 
     assert_equal alex.board[1][1], :m 
   end
 
@@ -58,6 +59,33 @@ class BattleshipTest < MiniTest::Test
     alex.place_ship(:patrol_boat, "C2", "vertical")
     assert_equal alex.board[3][2], :s 
     assert_equal alex.board[4][2], :s
+  end
+
+  def test_player_can_hit_a_ship
+    alex = Player.new "Alex"
+    emily = Player.new "Emily"
+    emily.place_ship(:destroyer, "D5", "horizontal")
+    alex.take_guess "D5", emily
+    emily.mark_board [4, 5], :h
+    assert_equal emily.board[4][5], :h
+  end
+
+  def test_player_can_sink_ships
+    alex = Player.new "Alex"
+    emily = Player.new "Emily"
+    alex.ships_remaining[:battleship] = 1
+    alex.get_hit(:battleship)
+    assert_equal alex.ships_remaining[:battleship], nil
+    assert_equal alex.ship_count, 4  
+  end
+
+  def test_players_can_win
+    alex = Player.new "Alex"
+    emily = Player.new "Emily"
+    g = Battleship.new alex, emily
+    alex.ships_remaining.replace({}) 
+    assert_equal g.won?, true 
+    assert_equal g.winner, emily
   end
 
 end

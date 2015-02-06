@@ -4,7 +4,7 @@ class Player
     @board = Board.new
     @ships = Ships.new
   end
-
+  #@ships = Object: Ship, contiaining: @ships_remaining, access to: all ships methods
   def board
     @board.display_board   
   end
@@ -17,8 +17,14 @@ class Player
     @ships.ships_remaining
   end
 
-  def take_guess guess 
-    convert_input guess
+  def take_guess guess, opponent #"D5"
+    position =convert_input guess #[4,5]
+    if opponent.board[position[0]][position[1]] == :s 
+      marker = :h 
+    else
+      marker = :m 
+    end
+    marker
   end
 
   def convert_input input
@@ -30,10 +36,10 @@ class Player
     return @position
   end 
 
-  def mark_board (position) # position is an array[]
+  def mark_board (position, marker) # position is an array[]
     row = position[0]
     column = position[1]
-    board[row][column] = :m 
+    board[row][column] = marker 
   end
 
   def place_ship (ship, start, direction)
@@ -52,5 +58,10 @@ class Player
         row += 1
       end
     end
+  end
+
+  def get_hit (ship)
+    ships_remaining[ship] -= 1 # @ships.ships_remaining  = @ships.@ships_remaining
+    @ships.sink?
   end
 end
