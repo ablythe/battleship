@@ -42,4 +42,22 @@ class BattleshipTest < MiniTest::Test
     assert_equal guess_two, [4,6]
   end
 
+  def test_position_gets_marked_on_board
+    alex = Player.new "Alex"
+    emily = Player.new "Emily"
+    position = emily.take_guess "A1"
+    alex.mark_board position 
+    assert_equal alex.board[1][1], :m 
+  end
+
+  def test_player_can_position_ships
+    alex = Player.new "Alex"
+    emily = Player.new "Emily"
+    emily.place_ship(:destroyer, "D5", "horizontal")
+    assert_equal emily.board[4], ["D",0,0,0,0,:s,:s,:s,0,0,0]
+    alex.place_ship(:patrol_boat, "C2", "vertical")
+    assert_equal alex.board[3][2], :s 
+    assert_equal alex.board[4][2], :s
+  end
+
 end
