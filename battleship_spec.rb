@@ -22,10 +22,10 @@ class BattleshipTest < MiniTest::Test
   end
 
   def test_players_have_ships
-   alex = Player.new "Alex"
-   emily = Player.new "Emily"
-   assert_equal alex.ship_count, 5
-   assert_equal emily.ship_count, 5
+    alex = Player.new "Alex"
+    emily = Player.new "Emily"
+    assert_equal alex.ship_count, 5
+    assert_equal emily.ship_count, 5
   end
 
   def test_players_have_multiple_ships
@@ -37,7 +37,9 @@ class BattleshipTest < MiniTest::Test
   def test_player_can_take_guess
     emily = Player.new "Emily"
     guess = emily.take_guess "A1"
-    assert_equal guess, [0,0]
+    assert_equal guess, [1,1]
+    guess_two = emily.take_guess "D6"
+    assert_equal guess_two, [4,6]
   end
 
- end
+end
