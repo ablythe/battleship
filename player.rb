@@ -6,7 +6,11 @@ class Player
   end
   #@ships = Object: Ship, contiaining: @ships_remaining, access to: all ships methods
   def board
-    @board.display_board   
+    @board.board   
+  end
+
+  def display_board
+    @board.display_board
   end
 
   def ship_count
