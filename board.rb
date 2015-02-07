@@ -6,10 +6,13 @@ class Board
   def board
     @board
   end
-  
+
   def display_board
     @board.each do |row|
-      puts "#{row}"
+      row.each do |space|
+        print "| #{space} |"
+      end
+      print "\n"
     end
   end
 end

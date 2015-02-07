@@ -14,24 +14,27 @@ p2 = Player.new player2
 
 g = Battleship.new(p1, p2)
 
-p1.board
-#Place Ships DONE
-puts "Player 1, place your ships."
 
-p1.ships_remaining.each_pair do |ship, length|
-  puts "Ship: #{ship}"
-  puts "Choose starting coordinates, example: A1"
-  start = gets.chomp
-  puts "Place ship horizontally or vertically?"
-  direction = gets.chomp
-
-  p1.place_ship(ship, start, direction)
-
+players = [p1,p2]
+players.each do |player| 
+  puts "#{player.player}, place your ships."
+  player.ships_remaining.each_pair do |ship, length|
+    puts "Ship: #{ship}"
+    puts "Choose starting coordinates, example: A1"
+    start = gets.chomp
+    puts "Place ship horizontally or vertically?"
+    direction = gets.chomp
+    player.place_ship(ship, start, direction)
+  end
+  player.display_board
 end
-p1.display_board
-#Turn:
-  #take a guess DONE
-  #tell player hit or miss
-  #mark board DONE
 
-  #check if someone won game?
+
+#TODO: until someone wins, take turns
+  #Turn:
+    #see board of guesses made
+    #take a guess 
+    #tell player hit or miss
+    #mark board 
+
+    #check if someone won game
