@@ -36,17 +36,19 @@ class Player
     opponent_position = opponent.board[position[0]][position[1]]
     if opponent_position == :b || opponent_position == :c || opponent_position== :d || opponent_position ==:s || opponent_position==:p 
       marker = :h 
-      if opponent_position == :b
-        opponent.get_hit :battleship
-      elsif opponent_position == :c 
-        opponent.get_hit :carrier
-      elsif opponent_position == :d
-        opponent.get_hit :destroyer
-      elsif opponent_position == :s
-        opponent.get_hit :submarine
-      elsif opponent_position == :p
-        opponent.get_hit :patrol_boat
-      end
+      ship_symbols = {battleship: :b, carrier: :c, destroyer: :d, submarine: :s, patrol_boat: :p}
+      opponent.get_hit ship_symbols.key(opponent_position)
+      # if opponent_position == :b
+      #   opponent.get_hit :battleship
+      # elsif opponent_position == :c 
+      #   opponent.get_hit :carrier
+      # elsif opponent_position == :d
+      #   opponent.get_hit :destroyer
+      # elsif opponent_position == :s
+      #   opponent.get_hit :submarine
+      # elsif opponent_position == :p
+      #   opponent.get_hit :patrol_boat
+      # end
     else
       marker = :m 
     end
@@ -108,18 +110,8 @@ class Player
     starting_position = convert_input(start)  # start coordinates [4,5]
     row = starting_position[0]  #4
     column = starting_position[1]  #5
-    old_board = board
-    marker = if ship == :battleship
-      :b 
-    elsif ship == :carrier 
-      :c 
-    elsif ship == :destroyer 
-      :d 
-    elsif ship == :submarine 
-      :s 
-    elsif ship == :patrol_boat 
-      :p 
-    end
+    ship_symbols = {battleship: :b, carrier: :c, destroyer: :d, submarine: :s, patrol_boat: :p}
+    marker = ship_symbols[ship]
     if direction == "h"  
       ship_length.times do 
         board[row][column] = marker
