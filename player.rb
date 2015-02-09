@@ -38,17 +38,6 @@ class Player
       marker = :h 
       ship_symbols = {battleship: :b, carrier: :c, destroyer: :d, submarine: :s, patrol_boat: :p}
       opponent.get_hit ship_symbols.key(opponent_position)
-      # if opponent_position == :b
-      #   opponent.get_hit :battleship
-      # elsif opponent_position == :c 
-      #   opponent.get_hit :carrier
-      # elsif opponent_position == :d
-      #   opponent.get_hit :destroyer
-      # elsif opponent_position == :s
-      #   opponent.get_hit :submarine
-      # elsif opponent_position == :p
-      #   opponent.get_hit :patrol_boat
-      # end
     else
       marker = :m 
     end
@@ -81,12 +70,8 @@ class Player
     ship_length = ships_remaining[ship]
     spaces_open = true
     if direction == 'h'
-      if 11 - (column + ship_length) >= 0
-        if board[row][column..(column+(ship_length-1))].count(0) ==ship_length
-          spaces_open =true
-        else
-          spaces_open = false
-        end
+      if 11 - (column + ship_length) >= 0 && board[row][column..(column+(ship_length-1))].count(0) ==ship_length
+        spaces_open =true
       else 
         spaces_open = false
       end
