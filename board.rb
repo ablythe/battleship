@@ -10,7 +10,7 @@ class Board
   def display_board
     @board.each do |row|
       row.each do |space|
-        print "| #{space} |"
+        print " #{space} "
       end
       print "\n"
     end

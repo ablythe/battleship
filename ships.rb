@@ -17,4 +17,5 @@ class Ships
     ships_remaining.delete_if {|ship, lives| lives == 0}
   end
 
+
 end

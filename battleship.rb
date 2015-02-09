@@ -1,6 +1,6 @@
 class Battleship
    def initialize player1, player2
-    @p1 = player1
+    @p1 = player1 #Player.new "name"
     @p2 = player2
 
   end
@@ -15,10 +15,10 @@ class Battleship
 
   def won?
     if @p1.ships_remaining == {}
-      @winner =@p2
+      @winner =@p2.name
       true
     elsif @p2.ships_remaining =={}
-      @winner =@p1
+      @winner =@p1.name
       true
     else
       false

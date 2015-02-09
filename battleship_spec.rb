@@ -1,8 +1,12 @@
+require 'simplecov'
+
+SimpleCov.start
 require 'minitest/autorun'
 require './player'
 require './battleship'
 require './board'
 require './ships'
+
 
 class BattleshipTest < MiniTest::Test
 
@@ -47,26 +51,26 @@ class BattleshipTest < MiniTest::Test
     alex = Player.new "Alex"
     emily = Player.new "Emily"
     emily.take_guess "A1", alex
-    alex.mark_board [1,1], :m 
+    alex.mark_boards "A1", :m 
     assert_equal alex.board[1][1], :m 
   end
 
   def test_player_can_position_ships
     alex = Player.new "Alex"
     emily = Player.new "Emily"
-    emily.place_ship(:destroyer, "D5", "horizontal")
-    assert_equal emily.board[4], ["D",0,0,0,0,:s,:s,:s,0,0,0]
+    emily.place_ship(:destroyer, "D5", "h")
+    assert_equal emily.board[4], ["D",0,0,0,0,:d,:d,:d,0,0,0]
     alex.place_ship(:patrol_boat, "C2", "vertical")
-    assert_equal alex.board[3][2], :s 
-    assert_equal alex.board[4][2], :s
+    assert_equal alex.board[3][2], :p  
+    assert_equal alex.board[4][2], :p 
   end
 
   def test_player_can_hit_a_ship
     alex = Player.new "Alex"
     emily = Player.new "Emily"
-    emily.place_ship(:destroyer, "D5", "horizontal")
+    emily.place_ship(:destroyer, "D5", "h")
     alex.take_guess "D5", emily
-    emily.mark_board [4, 5], :h
+    emily.mark_boards "D5", :h
     assert_equal emily.board[4][5], :h
   end
 
@@ -79,13 +83,36 @@ class BattleshipTest < MiniTest::Test
     assert_equal alex.ship_count, 4  
   end
 
-  def test_players_can_win
+  def test_player1_can_win
     alex = Player.new "Alex"
     emily = Player.new "Emily"
     g = Battleship.new alex, emily
+    refute g.won?
     alex.ships_remaining.replace({}) 
     assert_equal g.won?, true 
-    assert_equal g.winner, emily
+    assert_equal g.winner, "Emily"
+  end
+
+  def test_player2_can_win
+    alex = Player.new "Alex"
+    emily = Player.new "Emily"
+    g = Battleship.new alex, emily
+    emily.ships_remaining.replace({}) 
+    assert_equal g.won?, true 
+    assert_equal g.winner, "Alex"
+  end
+
+  def test_player_cannot_place_off_the_board
+    alex = Player.new "Alex"
+    assert_equal false, alex.validate_ship_placement(:battleship, "J1", 'vertical')
+    assert_equal false, alex.validate_ship_placement(:battleship, "J10", 'h')
+  end
+
+  def test_player_cannot_place_ship_on_another_ship
+    alex = Player.new "Alex"
+    alex.place_ship(:destroyer, "D5", "h")
+    assert_equal false, alex.validate_ship_placement(:battleship, "D5", "h")
+    assert_equal false, alex.validate_ship_placement(:battleship, "D5", "v")
   end
 
 end
