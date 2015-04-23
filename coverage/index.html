@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.8.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.8.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.8.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-08T20:05:16-05:00">2015-02-08T20:05:16-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-08T22:12:46-05:00">2015-02-08T22:12:46-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">88.62%</span></span>
+    (<span class="covered_percent"><span class="green">93.86%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.61
+         4.86
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>123</b> relevant lines. 
-    <span class="green"><b>109</b> lines covered</span> and
-    <span class="red"><b>14</b> lines missed </span>
+    <b>114</b> relevant lines. 
+    <span class="green"><b>107</b> lines covered</span> and
+    <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -67,17 +67,17 @@
         <td>10</td>
         <td>6</td>
         <td>4</td>
-        <td>8.6</td>
+        <td>8.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#f870a13111cc81e4c4b7dd3768e62076a8b035ba" class="src_link" title="player.rb">player.rb</a></td>
-        <td class="yellow strong">88.37 %</td>
-        <td>140</td>
-        <td>86</td>
-        <td>76</td>
-        <td>10</td>
-        <td>4.5</td>
+        <td class="green strong">96.1 %</td>
+        <td>132</td>
+        <td>77</td>
+        <td>74</td>
+        <td>3</td>
+        <td>4.9</td>
       </tr>
       
       <tr>
@@ -366,8 +366,8 @@
           <code class="ruby">  def board</code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="7">
-          <span class="hits">34</span>
+        <li class="covered" data-hits="30" data-linenumber="7">
+          <span class="hits">30</span>
           
           <code class="ruby">    @board</code>
         </li>
@@ -445,11 +445,11 @@
         <div class="source_table" id="f870a13111cc81e4c4b7dd3768e62076a8b035ba">
   <div class="header">
     <h3>player.rb</h3>
-    <h4><span class="yellow">88.37 %</span> covered</h4>
+    <h4><span class="green">96.1 %</span> covered</h4>
     <div>
-      <b>86</b> relevant lines. 
-      <span class="green"><b>76</b> lines covered</span> and
-      <span class="red"><b>10</b> lines missed.</span>
+      <b>77</b> relevant lines. 
+      <span class="green"><b>74</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -516,8 +516,8 @@
           <code class="ruby">  def board</code>
         </li>
       
-        <li class="covered" data-hits="32" data-linenumber="11">
-          <span class="hits">32</span>
+        <li class="covered" data-hits="28" data-linenumber="11">
+          <span class="hits">28</span>
           
           <code class="ruby">    @board.board   </code>
         </li>
@@ -687,610 +687,562 @@
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">      if opponent_position == :b</code>
+          <code class="ruby">      ship_symbols = {battleship: :b, carrier: :c, destroyer: :d, submarine: :s, patrol_boat: :p}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        opponent.get_hit :battleship</code>
+          <code class="ruby">      opponent.get_hit ship_symbols.key(opponent_position)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">      elsif opponent_position == :c </code>
+          <code class="ruby">      # if opponent_position == :b</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">        opponent.get_hit :carrier</code>
+          <code class="ruby">      #   opponent.get_hit :battleship</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">      elsif opponent_position == :d</code>
+          <code class="ruby">      # elsif opponent_position == :c </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="44">
           
-          <code class="ruby">        opponent.get_hit :destroyer</code>
+          
+          <code class="ruby">      #   opponent.get_hit :carrier</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">      elsif opponent_position == :s</code>
+          <code class="ruby">      # elsif opponent_position == :d</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">        opponent.get_hit :submarine</code>
+          <code class="ruby">      #   opponent.get_hit :destroyer</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">      elsif opponent_position == :p</code>
+          <code class="ruby">      # elsif opponent_position == :s</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">        opponent.get_hit :patrol_boat</code>
+          <code class="ruby">      #   opponent.get_hit :submarine</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">      # elsif opponent_position == :p</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">      #   opponent.get_hit :patrol_boat</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="51">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="51">
           
-          <code class="ruby">      marker = :m </code>
+          
+          <code class="ruby">      # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="53">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="53">
+          <span class="hits">3</span>
           
-          <code class="ruby">    marker</code>
+          <code class="ruby">      marker = :m </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="covered" data-hits="4" data-linenumber="55">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">    marker</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">  def convert_input input #string guess -&gt; [x,y]</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="58">
+        <li class="covered" data-hits="14" data-linenumber="60">
           <span class="hits">14</span>
           
           <code class="ruby">    position = [] # [ row, column]</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="59">
+        <li class="covered" data-hits="14" data-linenumber="61">
           <span class="hits">14</span>
           
           <code class="ruby">    rows = {&quot;A&quot; =&gt; 1,&quot;B&quot; =&gt; 2,&quot;C&quot;=&gt; 3,&quot;D&quot;=&gt; 4,&quot;E&quot;=&gt; 5,&quot;F&quot; =&gt; 6, &quot;G&quot; =&gt; 7, &quot;H&quot; =&gt; 8, &quot;I&quot; =&gt; 9, &quot;J&quot; =&gt; 10 }</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="60">
+        <li class="covered" data-hits="14" data-linenumber="62">
           <span class="hits">14</span>
           
           <code class="ruby">    input_array = input.split(&quot;&quot;,2)  #guess =&quot;A1&quot;, [&quot;A&quot;, &quot;1&quot;]</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="61">
+        <li class="covered" data-hits="14" data-linenumber="63">
           <span class="hits">14</span>
           
           <code class="ruby">    position.push rows[input_array[0]] # A=&gt;1</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="62">
+        <li class="covered" data-hits="14" data-linenumber="64">
           <span class="hits">14</span>
           
           <code class="ruby">    position.push input_array[1].to_i # &quot;1&quot; =&gt; 1</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="63">
+        <li class="covered" data-hits="14" data-linenumber="65">
           <span class="hits">14</span>
           
           <code class="ruby">    return position</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">  end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
           <code class="ruby">  def mark_boards (guess, marker) # position is an array[]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="67">
+        <li class="covered" data-hits="2" data-linenumber="69">
           <span class="hits">2</span>
           
           <code class="ruby">    position = convert_input(guess)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="68">
+        <li class="covered" data-hits="2" data-linenumber="70">
           <span class="hits">2</span>
           
           <code class="ruby">    row = position[0]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="69">
+        <li class="covered" data-hits="2" data-linenumber="71">
           <span class="hits">2</span>
           
           <code class="ruby">    column = position[1]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="70">
+        <li class="covered" data-hits="2" data-linenumber="72">
           <span class="hits">2</span>
           
           <code class="ruby">    board[row][column] = marker</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="71">
+        <li class="covered" data-hits="2" data-linenumber="73">
           <span class="hits">2</span>
           
           <code class="ruby">    guesses_board[row][column] = marker</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
           <code class="ruby">  def validate_ship_placement ship, start, direction</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="76">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    starting_position = convert_input(start)  # start coordinates [4,5]</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="77">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    row = starting_position[0]  #4</code>
-        </li>
-      
         <li class="covered" data-hits="4" data-linenumber="78">
           <span class="hits">4</span>
           
-          <code class="ruby">    column = starting_position[1]  #5</code>
+          <code class="ruby">    starting_position = convert_input(start)  # start coordinates [4,5]</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="79">
           <span class="hits">4</span>
           
-          <code class="ruby">    ship_length = ships_remaining[ship]</code>
+          <code class="ruby">    row = starting_position[0]  #4</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="80">
           <span class="hits">4</span>
           
-          <code class="ruby">    spaces_open = true</code>
+          <code class="ruby">    column = starting_position[1]  #5</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="81">
           <span class="hits">4</span>
           
+          <code class="ruby">    ship_length = ships_remaining[ship]</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="82">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    spaces_open = true</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="83">
+          <span class="hits">4</span>
+          
           <code class="ruby">    if direction == &#39;h&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="82">
+        <li class="covered" data-hits="2" data-linenumber="84">
           <span class="hits">2</span>
           
           <code class="ruby">      if 11 - (column + ship_length) &gt;= 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="83">
+        <li class="covered" data-hits="1" data-linenumber="85">
           <span class="hits">1</span>
           
           <code class="ruby">        if board[row][column..(column+(ship_length-1))].count(0) ==ship_length</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="84">
+        <li class="missed" data-hits="0" data-linenumber="86">
           
           
           <code class="ruby">          spaces_open =true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="86">
+        <li class="covered" data-hits="1" data-linenumber="88">
           <span class="hits">1</span>
           
           <code class="ruby">          spaces_open = false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="89">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby">      else </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
+        <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
           <code class="ruby">        spaces_open = false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">    else #vertical</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="92">
+        <li class="covered" data-hits="2" data-linenumber="94">
           <span class="hits">2</span>
           
           <code class="ruby">      if 11 - (row + ship_length) &gt;= 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="93">
+        <li class="covered" data-hits="1" data-linenumber="95">
           <span class="hits">1</span>
           
           <code class="ruby">        ship_length.times do</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="94">
+        <li class="covered" data-hits="4" data-linenumber="96">
           <span class="hits">4</span>
           
           <code class="ruby">          if board[row][column] != 0</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="95">
+        <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
           <code class="ruby">            spaces_open = false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">          end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="97">
+        <li class="covered" data-hits="4" data-linenumber="99">
           <span class="hits">4</span>
           
           <code class="ruby">          row += 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="never" data-hits="" data-linenumber="100">
           
           
           <code class="ruby">        end  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="100">
+        <li class="covered" data-hits="1" data-linenumber="102">
           <span class="hits">1</span>
           
           <code class="ruby">        spaces_open =false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="101">
+        <li class="never" data-hits="" data-linenumber="103">
           
           
           <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
-          
-          
-          <code class="ruby">    end </code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="103">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    return spaces_open</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="104">
           
           
+          <code class="ruby">    end </code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="105">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    return spaces_open</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="106">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="105">
+        <li class="never" data-hits="" data-linenumber="107">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="106">
+        <li class="covered" data-hits="1" data-linenumber="108">
           <span class="hits">1</span>
           
           <code class="ruby">  def place_ship (ship, start, direction)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="107">
+        <li class="covered" data-hits="4" data-linenumber="109">
           <span class="hits">4</span>
           
           <code class="ruby">    ship_length = @ships.ships_remaining[ship]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="108">
+        <li class="covered" data-hits="4" data-linenumber="110">
           <span class="hits">4</span>
           
           <code class="ruby">    starting_position = convert_input(start)  # start coordinates [4,5]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="109">
+        <li class="covered" data-hits="4" data-linenumber="111">
           <span class="hits">4</span>
           
           <code class="ruby">    row = starting_position[0]  #4</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="110">
+        <li class="covered" data-hits="4" data-linenumber="112">
           <span class="hits">4</span>
           
           <code class="ruby">    column = starting_position[1]  #5</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="111">
+        <li class="covered" data-hits="4" data-linenumber="113">
           <span class="hits">4</span>
           
-          <code class="ruby">    old_board = board</code>
+          <code class="ruby">    ship_symbols = {battleship: :b, carrier: :c, destroyer: :d, submarine: :s, patrol_boat: :p}</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="112">
+        <li class="covered" data-hits="4" data-linenumber="114">
           <span class="hits">4</span>
           
-          <code class="ruby">    marker = if ship == :battleship</code>
+          <code class="ruby">    marker = ship_symbols[ship]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="113">
-          
-          
-          <code class="ruby">      :b </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="114">
-          
-          
-          <code class="ruby">    elsif ship == :carrier </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="115">
-          
-          
-          <code class="ruby">      :c </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="116">
-          
-          
-          <code class="ruby">    elsif ship == :destroyer </code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="117">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      :d </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="118">
-          
-          
-          <code class="ruby">    elsif ship == :submarine </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="119">
-          
-          
-          <code class="ruby">      :s </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="120">
-          
-          
-          <code class="ruby">    elsif ship == :patrol_boat </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="121">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      :p </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="122">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="123">
+        <li class="covered" data-hits="4" data-linenumber="115">
           <span class="hits">4</span>
           
           <code class="ruby">    if direction == &quot;h&quot;  </code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="124">
+        <li class="covered" data-hits="3" data-linenumber="116">
           <span class="hits">3</span>
           
           <code class="ruby">      ship_length.times do </code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="125">
+        <li class="covered" data-hits="9" data-linenumber="117">
           <span class="hits">9</span>
           
           <code class="ruby">        board[row][column] = marker</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="126">
+        <li class="covered" data-hits="9" data-linenumber="118">
           <span class="hits">9</span>
           
           <code class="ruby">        column += 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="119">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="never" data-hits="" data-linenumber="120">
           
           
           <code class="ruby">    else #direction = vertical</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="129">
+        <li class="covered" data-hits="1" data-linenumber="121">
           <span class="hits">1</span>
           
           <code class="ruby">      ship_length.times do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="130">
+        <li class="covered" data-hits="2" data-linenumber="122">
           <span class="hits">2</span>
           
           <code class="ruby">        board[row][column] = marker</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="131">
+        <li class="covered" data-hits="2" data-linenumber="123">
           <span class="hits">2</span>
           
           <code class="ruby">        row += 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="132">
+        <li class="never" data-hits="" data-linenumber="124">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="133">
+        <li class="never" data-hits="" data-linenumber="125">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="134">
+        <li class="never" data-hits="" data-linenumber="126">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="135">
+        <li class="never" data-hits="" data-linenumber="127">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="136">
+        <li class="covered" data-hits="1" data-linenumber="128">
           <span class="hits">1</span>
           
           <code class="ruby">  def get_hit (ship)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="137">
+        <li class="covered" data-hits="2" data-linenumber="129">
           <span class="hits">2</span>
           
           <code class="ruby">    ships_remaining[ship] -= 1 # @ships.ships_remaining  = @ships.@ships_remaining</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="138">
+        <li class="covered" data-hits="2" data-linenumber="130">
           <span class="hits">2</span>
           
           <code class="ruby">    @ships.sink?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="139">
+        <li class="never" data-hits="" data-linenumber="131">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="140">
+        <li class="never" data-hits="" data-linenumber="132">
           
           
           <code class="ruby">end</code>
